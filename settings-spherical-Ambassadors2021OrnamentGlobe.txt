@@ -1,0 +1,15 @@
+Email Address: paenian@gmail.com
+Picture: Ambassadors2021OrnamentGlobe.png
+Lithophane Resolution: 0.25
+Sphere Diameter: 100
+Picture Angular Height: 129.37
+Picture Angular Width: 360.00
+Maximum Thickness: 2.7
+Minimum Thickness: 0.6
+Cylinder Outer Diameter: 59
+Cylinder Height: 25
+Cylinder Thickness: 4
+Cylinder Ledge Outer Diameter: 70
+Top Hole Outer Diameter: 25
+X Shift: 0.00
+Y Shift: 0.00

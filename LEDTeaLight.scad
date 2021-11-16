@@ -20,7 +20,7 @@
 // Customizer parameters
 switch                          = "switch";   // [noswitch:No Switch, switch:With Switch]
 tealight_diameter               = 50;         // [33.0:0.5:100.0]
-tealight_height                 = 14.65-5;        // [14.65:0.05:35.0]
+tealight_height                 = 14.65;        // [14.65:0.05:35.0]
 led_holder_outer_diameter       = 10;          // [8.0:0.1:13]
 nozzle_diameter                 = 0.4;          // [0.05:0.05:2.0];
 
@@ -42,17 +42,17 @@ switchRetainerBlockDimensions	= [ switchMainBodyDimensions[0] + switchRetainerBo
 topRingThickness				= switchMainBodyDimensions[1];
 baseHeight						= tealight_height - topRingThickness;
 cr2032HolderOffset		    	= -2.5;
-cr2032HolderDiameter			= 22.5;
-cr2032HolderBlockWidth			= 8.0;
-cr2032HolderBlockDepth			= 2.5;
-cr2032HolderLeadDiameter		= 1.8;
+cr2032HolderDiameter			= 22.5+.5;
+cr2032HolderBlockWidth			= 8.0+.5;
+cr2032HolderBlockDepth			= 2.5+.5;
+cr2032HolderLeadDiameter		= 2.1;
 cr2032HolderLead1Pos			= [-(cr2032HolderDiameter / 2 - 2.75), 0, 0];
 cr2032HolderLead2Pos			= [cr2032HolderLead1Pos[0] + 20, cr2032HolderLead1Pos[1], cr2032HolderLead1Pos[2]];
 cr2032HolderThickness			= baseHeight - 1.0;
 
 ledHolderHeight					= 9.0;
-ledHolderInsetDepth				= 2.5;
-ledDiameter						= 6.0;	// Diameter of the lip of the led, not the led size
+ledHolderInsetDepth				= 5;
+ledDiameter						= 6.0+.25;	// Diameter of the lip of the led, not the led size
 ledLeadThickness				= 1.0;
 
 topRingInnerDiameter			= tealight_diameter-5;
@@ -60,10 +60,10 @@ topRingInnerDiameter			= tealight_diameter-5;
 topLedVoidClearance				= 0.1;
 
 textThickness                   = 0.75;
-textInset                       = -0.5;
-textSize                        = 7.0;
-textPositiveOffset              = [cr2032HolderLead2Pos[0], 3, baseHeight + textThickness/2];
-textLine2Offset                 = [0, 12.0+4, baseHeight + textThickness/2];
+textInset                       = -0.25;
+textSize                        = 7.5;
+textPositiveOffset              = [cr2032HolderLead2Pos[0]-1, 2, baseHeight + textThickness/2];
+textLine2Offset                 = [0, 12.0-1, baseHeight + textThickness/2];
 textLine1Offset                 = [0, textLine2Offset[1] - (textSize + 1), baseHeight + textThickness/2];
 
 manifoldCorrection = 0.02;
@@ -87,7 +87,7 @@ color( [1.0, 0.0, 0.0] )
         linear_extrude( height=textThickness, center=true)
             text("+", font="Consolas:style=Bold", valign="center", halign="center", size=textSize);
 
-    translate( [0, 0, textInset] ) translate( textLine1Offset )
+    *translate( [0, 0, textInset] ) translate( textLine1Offset )
         linear_extrude( height=textThickness, center=true)
             rotate( [0, 0, 180] )
                 text("Flat=-", font="Consolas:style=Bold", valign="center", halign="center", size=textSize);
